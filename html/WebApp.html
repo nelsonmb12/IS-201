@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Board Creator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      color: #4a90e2;
+    }
+
+    .link_back {
+    top: 5px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    }
+
+    .container {
+      text-align: center;
+    }
+    #mood-board {
+      width: 80%;
+      height: 400px;
+      border: 2px dashed #999;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: white;
+    }
+    .input-group {
+      margin: 10px 0;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .mood-item {
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      background-color: #fafafa;
+    }
+    .mood-item img {
+      max-width: 100px;
+      max-height: 100px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+    <div class="link_back">
+        <span class="link_back"><a href="from_stratch.html" id="top">Nelson Boden's Wakeboarding Page</a></span>
+    </div>
+
+  <div class="container">
+    <h1>Mood Board Creator</h1>
+    <div class="input-group">
+      <input id="text-input" type="text" placeholder="Add inspirational text">
+      <input id="image-input" type="text" placeholder="Add image URL">
+      <input id="color-input" type="color" value="#f4f4f9">
+      <button onclick="addToMoodBoard()">Add to Mood Board</button>
+      <button onclick="clearMoodBoard()">Clear Mood Board</button>
+
+    </div>
+    <div id="mood-board"></div>
+</div>
+
+<script>
+  function addToMoodBoard() {
+    const text = document.getElementById('text-input').value;
+    const imageUrl = document.getElementById('image-input').value;
+    const color = document.getElementById('color-input').value;
+
+    if (!text && !imageUrl) {
+      alert('Please add text or an image URL!');
+      return;
+    }
+
+    const moodBoard = document.getElementById('mood-board');
+    const moodItem = document.createElement('div');
+    moodItem.className = 'mood-item';
+    moodItem.style.backgroundColor = color;
+
+    if (text) {
+      const textElement = document.createElement('p');
+      textElement.textContent = text;
+      moodItem.appendChild(textElement);
+    }
+
+    if (imageUrl) {
+      const imageElement = document.createElement('img');
+      imageElement.src = imageUrl;
+      moodItem.appendChild(imageElement);
+    }
+
+    moodBoard.appendChild(moodItem);
+
+      // Clear inputs
+      document.getElementById('text-input').value = '';
+      document.getElementById('image-input').value = '';
+      document.getElementById('color-input').value = '#f4f4f9';
+    }
+
+    function clearMoodBoard() {
+        const moodBoard = document.getElementById('mood-board');
+        moodBoard.innerHTML = '';
+    }
+
+  </script>
+</body>
+</html>

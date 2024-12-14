@@ -1,0 +1,91 @@
+/* Nelson Boden
+Section 001
+December 5, 2024 */
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.left_body {
+    top: 114px;
+    right: 5px;
+    width: 260px;
+    bottom: 30px;
+    padding: 5px;
+}
+
+.right_body {
+    top: 114px;
+    left: 5px;
+    width: 260px;
+    bottom: 30px;
+    padding: 5px;
+}
+
+.footer {
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    height: 25px;
+    font-size: 8px;
+    color: beige;
+    text-align: center;
+    padding-top: 15px;
+    position: fixed;
+}
+
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.head {
+    top: 20px;
+    
+    height: 100px;
+    
+}
+
+.main_part {
+    top: 114px;
+    left: 284px;
+    right: 284px;
+    padding: 10px;
+    text-align: center;
+}
+
+.link_back {
+    top: 5px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.common_border {
+    border: 1px solid rgb(136, 136, 136);
+    position: absolute;
+}
+
+.background {
+    background-image: url('../images/water\ background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 100%;
+}
